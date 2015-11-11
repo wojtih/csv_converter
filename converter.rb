@@ -1,4 +1,4 @@
-#!/usr/local/bin/ruby -w
+#!/usr/bin/env ruby
 require 'csv'
 
 require_relative 'converter/parser'
@@ -12,7 +12,7 @@ EOF
 
 if %w(--help -h).include? ARGV[0]
   puts HELP_MSG
-elsif ARGV[0][0] == "-"
+elsif ARGV[0] && ARGV[0][0] == "-"
   puts "Invalid option #{ARGV[0]}"
   puts HELP_MSG
 else
